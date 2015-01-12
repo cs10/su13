@@ -1,0 +1,54 @@
+WHERE DID YOU GROW UP? WHAT WAS YOUR PATH TO CAL?
+Concord, CA in an Irish and Italian Catholic community (I loved my Catholic
+elementary school; the nuns were a progressive bunch coming out of the 60's).
+
+From Concord, I went to Davis for college and majored for a couple years in Computer
+Science, moved into an independent study, self-made program in 
+Computer-aided Environmental Science, and then went through a massive 
+metamorphosis after taking a class from Dean MacCannell and switched gears 
+entirely to read social theory for two years:  Marxism, Lacanian Psychology, 
+Bateson, Goffman, Barthos. 
+
+After a short stint working at Big Brothers Big Sisters of the East Bay, I pursued 
+a career in teaching and re-discovered my interest in Computer Science and software
+engineering. For the past 15 years, I have taught Math and Computer Science at 
+Monte Vista High School in Danville and Albany High School in Albany.
+About 5 years ago, I responded to a request from Nate Titterton and Mike Clancy 
+to work on the AP Computer Science curriculum. Following this, I joined the local 
+group piloting the CS 10 course in high schools, met Dan Garcia, 
+and accepted his invitation to teach this summer course.
+
+HOW MUCH PROGRAMMING HAVE YOU DONE (& WHAT LANGUAGES)?
+I have spent hours and hours programming in numerous languages both in teaching and 
+industry roles over the last 15 years. Logo and Basic in grade school, C in college, 
+and after college Java, asp/php, ruby, R, javascript, coffeescript, BYOB ...
+
+I have had the opportunity to work on exciting professional projects: data 
+crunching and statistical analysis with CAL's Demography Department, transportation 
+network mapping and visualization with CAL's PATH group and numerous database integration 
+projects with a couple of school districts.
+
+WHAT ARE YOUR HOBBIES?
+Mountain biking, gardening and spending time with my two kids and wife. I have always
+been a voracious reader and have spent a large chunk of time, off and on, over the past
+ten years studying and playing Chess - a really beautiful, challenging game 
+to geek out on.
+
+WHAT ARE SOME OF YOUR TALENTS & SKILLS? 
+I can juggle, hoola-hoop, have a reasonable amount of endurance, and move with people easily.
+
+HAVE YOU DONE ANYTHING REMARKABLE? HAS ANYTHING MEMORABLE 
+HAPPENED TO YOU?
+I once had the opportunity to spend a weekend with Robert Johnson, the famous 
+Jungian psychologist. I had no idea who he was when I met him at a conference 
+at the end of college in 1994 -- 23 years old. He spent the 
+weekend seeking me out at various moments and talking to me about Jung, western mythologies,
+being introverted in an extroverted culture, and India. It wasn't until I got home that
+I realized who he was and what had just happened. 
+
+WHAT COMMITMENTS WILL BE CONSUMING YOUR CYCLES THIS SEMESTER?
+I am spending as much time on my bike and playing with my kids this summer as I can. 
+Workwise, my time will be spent between this course, the traffic mapping and 
+visualization project I have been working on for two years, and working with 
+colleagues in the area on the cs10k project (http://cs10kcommunity.org/).
+Camping trips are planned for the weekends; painting our house, making gaspatcho. All good.

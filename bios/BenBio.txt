@@ -1,0 +1,50 @@
+WHERE DID YOU GROW UP? WHAT WAS YOUR PATH TO CAL?
+
+I grew up in Vacaville, CA -- not very far from Berkeley. I graduated
+from Vacaville High School, and went on to MIT where I majored in CS
+(or Course 6-3 as it's known there) with a minor in Film and Media
+Studies. Then I came back to the Bay Area to work for a company called
+Macromedia on a product called Flash. (The product is still around
+today, but the company was bought up by Adobe in 2005.) Then I worked
+at a startup, got bored, became a math teacher in Richmond, CA and
+then got a job teaching computer science at Galileo High School in San
+Francisco. Through the Computer Science Teachers Association I met Dan
+Garcia and for summer 2012 he asked me to teach CS10.
+
+HOW MUCH PROGRAMMING HAVE YOU DONE (& WHAT LANGUAGES)?
+
+I started messing around with HTML in high school because I wanted to
+make web pages. At MIT I learned Scheme (in 6.001, the class
+Berkeley's CS61A was modeled after), Java, and . Professionally I've
+written C++, PHP, and JavaScript.
+
+WHAT ARE YOUR HOBBIES?
+
+Playing and collecting electronic music (I still have a large vinyl
+collection), indoor and outdoor climbing, and metalworking. I recently
+got a remote-control quadcopter and am learning to fly it.
+
+WHAT ARE SOME OF YOUR TALENTS & SKILLS?
+
+I am really good at finding the right search term to get information
+from Google. Everyone does it all the time, but I appreciate the art
+of the search.
+
+HAVE YOU DONE ANYTHING REMARKABLE? HAS ANYTHING MEMORABLE HAPPENED TO YOU?
+
+I was the captain of MIT's swim team my senior year of college (2000)
+and was on a relay team that set a NEWMAC conference record. In the
+summer of 2010 I worked in Jerusalem with a program that brings
+Israeli and Palestinian high school students together to learn
+computer science and business skills. I recieved the 2011 MIT
+Inspirational Teacher award based on that experience.
+
+WHAT COMMITMENTS WILL BE CONSUMING YOUR CYCLES THIS SEMESTER?
+
+In addition to teaching this class I'm also working for a summer camp
+that serves elementary age kids. My goal is to bring electronics,
+programming, and building experiences to younger students in a more
+freeform environement where they can learn by exploring. I'm also a
+member of the Computer Science Teachers Association Leadership Cohort
+that is working to bring computer science into the state curriculum
+for high schools.

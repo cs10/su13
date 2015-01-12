@@ -1,0 +1,1250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="HTML Tidy for Mac OS X (vers 31
+      October 2006 - Apple Inc. build 15.6), see www.w3.org" name="generator" />
+    <link rel="shortcut icon" href="http://bjc.berkeley.edu/bjcfav.png" type="image/png">
+    <link type="text/css" rel="stylesheet" title="CS10 Style" href="cs10style.css" />
+    <title> UC Berkeley EECS | CS10 : The Beauty and Joy of Computing | Summer
+      2013 </title>
+    <meta content="CoffeeCup HTML Editor
+      (www.coffeecup.com)" http-equiv="generator" />
+    <meta content="Wed, 12 May 2010 22:01:49 GMT" name="created" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <script type="text/javascript">
+    function updateCalendar()
+    {
+        var today = new Date();
+        var tdate = today.getDate();
+        var tmonth = today.getMonth() + 1;
+        var tday = today.getDay();
+        if (tmonth < 5 || tmonth == 5 && tdate < 13)
+        {
+            var tableCellArr = new Array();
+            tableCellArr = document.getElementsByTagName("td");
+            for (var i = 0; i < tableCellArr.length; i++)
+            {
+                //var tagName = document.getElementsByTagName( "*" ).item(i).nodeName;
+                var tagObj = document.getElementsByTagName("td").item(i);
+                var mo = tagObj.id;
+                var dy = tagObj.title;
+                alert("TagName: " + tagName + "\n\ninnerText:\n" + tagObj.id);
+                if (mo < tmonth && tagObj.id > 0)
+                { //past month
+                    tagObj.style.backgroundColor = "#BABABA";
+                }
+                else if (mo == tmonth)
+                {
+                    if (dy < tdate && dy > 0)
+                    {
+                        tagObj.style.backgroundColor = "#BABABA";
+                    }
+                    else if (dy == tdate)
+                    {
+                        //golden rectangle for current date
+                        tagObj.style.border = "medium solid Gold";
+                    }
+                }
+            } //closing for loop
+        }
+    }
+    function displaySpeech(img_name, img_src)
+    {
+        document[img_name].src = img_src;
+    }
+  </script>
+    <style type="text/css">
+      p.c15 {text-align: center}
+      img.c14 {border-width:0}
+      div.c13 {width: 30%; float: left; text-align: center;}
+      p.c12 {font-weight: bold;}
+      p.c11 {padding-left: 4px;}
+      td.c10 {text-align:left;}
+      td.c9 {text-align:top;}
+      div.c8 {clear: both;}
+      div.c7 {padding: 5px; margin: 5px; float: right; display: inline;}
+      p.c6 {text-align:justify}
+      div.c5 {width:334px;float:left;margin:0px 5px 0px 0px}
+      p.c4 {text-align:justify;}
+      div.c3 {width:360px;align:right;float:right;margin:0px 0px 5px 5px}
+      p.c2 {text-align: left}
+      div.c1 {position:absolute;top:40px;left:200px;z-index:40;}
+  </style>
+  </head>
+  <body onload="updateCalendar()">
+    <table>
+      <tbody>
+        <tr>
+          <td width="180">
+            <div class="c1"> <img id="speech" name="speech" alt="blank" src="images/blank.gif" />
+            </div>
+            <img width="192" border="0" align="bottom" height="217" usemap="#gobo"
+              title="Click me to navigate."
+              alt="Your
+              Navigation Bar didn't load." class="navbar" src="images/new_navbar.gif" />
+            <map name="gobo" id="gobo">
+              <area onmouseout="displaySpeech('speech', 'images/blank.gif')" onmouseover="displaySpeech('speech',
+                'images/overview_jump.gif')" href="#overview" alt="Overview" coords="21,83,81,62"
+                shape="rect" />
+              <area onmouseout="displaySpeech('speech', 'images/blank.jpg')" onmouseover="displaySpeech('speech',
+                'images/news_jump.gif')" href="#news" alt="News" coords="22,106,58,85"
+                shape="rect" />
+              <area onmouseout="displaySpeech('speech', 'images/blank.gif')" onmouseover="displaySpeech('speech',
+                'images/calendar_jump.gif')" href="#calendar" alt="Calendar" coords="22,126,79,108"
+                shape="rect" />
+              <area onmouseout="displaySpeech('speech', 'images/blank.gif')" onmouseover="displaySpeech('speech',
+                'images/staff_jump.gif')" href="#staff" alt="Staff" coords="22,150,58,128"
+                shape="rect" />
+              <area onmouseout="displaySpeech('speech', 'images/blank.gif')" onmouseover="displaySpeech('speech',
+                'images/grading_jump.gif')" href="#grades" alt="Grades" coords="22,173,72,150"
+                shape="rect" />
+              <area onmouseout="displaySpeech('speech', 'images/blank.gif')" onmouseover="displaySpeech('speech',
+                'images/resources_jump.gif')" href="#resources" alt="Resources"
+                coords="22,193,90,172"
+                shape="rect" />
+            </map>
+          </td>
+          <td>
+            <p class="logo"> <b> 
+		CS10 : BJC (The Beauty and Joy of Computing)<br />
+		UC Berkeley EECS <br />
+                Summer 2013 </b> </p>
+            <br />
+          </td>
+          <td width="160"> <a href="http://www.berkeley.edu/"> <img border="0"
+                src="images/bjc186.png" alt="BJC" /> </a></td>
+        </tr>
+      </tbody>
+    </table>
+<!--
+    <table>
+      <tbody>
+        <tr class="heading">
+          <td>
+            <p class="heading c2"> <a id="quicklinks" name="quicklinks">
+                QuickLinks </a> </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="http://sage.cs.berkeley.edu/course/view.php?id=34">
+              UC-WISE (labs) </a> </td>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="http://piazza.com/class#summer2012/cs10">
+              Piazza </a> </td>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="https://bspace.berkeley.edu/">
+              bSpace </a> </td>
+        </tr>
+        <tr>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="https://plus.google.com/s/%23cs10news">
+              Google+ (#cs10news) </a> </td>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="http://byob.berkeley.edu">
+              BYOB </a> </td>
+          <td width="33%" style="font-size:large"> <a target="_blank" href="http://webcast.berkeley.edu/playlist#c,d,Computer_Science,B060A68F57805734">
+              Webcasts </a> </td>
+        </tr>
+      </tbody>
+    </table>
+
+-->
+    <table>
+      <tbody>
+        <tr class="heading">
+          <td>
+            <p class="heading c2"> <a id="overview" name="overview"> Overview </a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="c4"> </p>
+    <div style="width:570px;float:right;margin:0px 5px 0px 10px" class="wp-caption center">
+      <iframe width="560" height="315" frameborder="0" allowfullscreen="" src="//www.youtube.com/embed/videoseries?list=PL48C2AF5762B2D32D&amp;hl=en_US&amp;hd=1"></iframe>
+      <p class="wp-caption-text"> Watch a playlist of 18 student testimonials
+        about CS10. </p>
+    </div>
+    <strong>CS10</strong>, <em>The Beauty and Joy of Computing</em>, is an
+    exciting new course offered by the <a href="http://www.eecs.berkeley.edu/">UC
+      Berkeley EECS Dept</a>. Computing has changed the world in profound ways.
+    It has opened up wonderful new ways for people to connect, design, research,
+    play, create, and express themselves. However, just using a computer is only
+    a small part of the picture. The real transformative and empowering
+    experience comes when one learns how to program the computer, to translate
+    ideas into code. This course will teach students how to do exactly that,
+    using <a href="http://byob.berkeley.edu">BYOB</a> (based on <a href="http://www.scratch.mit.edu">Scratch</a>),
+    one of the friendliest programming languages ever invented. It's purely
+    graphical, which means programming involves simply dragging blocks around,
+    and building bigger blocks out of smaller blocks.
+    <p></p>
+    <p class="c4"> But this course is far more than just learning to program.
+      We'll focus on some of the "Big Ideas" of computing, such as abstraction,
+      design, recursion, concurrency, simulations, and the limits of
+      computation. We'll show some beautiful applications of computing that have
+      changed the world, talk about the history of computing, and where it will
+      go in the future. Throughout the course, relevance will be emphasized:
+      relevance to the student and to society. As an example, the final project
+      will be completely of the students' choosing, on a topic most interesting
+      to them. The overarching theme is to expose students to the beauty and joy
+      of computing. This course is designed for computing non-majors, although
+      interested majors are certainly welcome to take the class as well! We are
+      especially excited about bringing computing (through this course) to
+      traditionally under-represented groups in computing, i.e., women and
+      ethnic minorities. </p>
+    <p class="c6"> Some history: in the Fall of 2009, we piloted a 2-unit
+      version of this course as the freshman/sophomore seminar <a href="http://inst.eecs.berkeley.edu/%7Ecs39n/fa09/">CS39N:
+        The Beauty and Joy of Computing</a> to 20 students. <a href="http://innovations.coe.berkeley.edu/vol3-issue10-dec09/beauty-and-joy-of-computing">It
+
+        was such a success</a> that we decided to move ahead to make this course
+      our new computing course for non-majors, replacing the venerable <a href="http://inst.eecs.berkeley.edu/%7Ecs3l/">CS3L</a>
+      and <a href="http://inst.eecs.berkeley.edu/%7Eselfpace/class/cs3s">CS3S</a>.
+      Fall 2010 was a 90-person pilot and since then we've continued to grow the
+      course as word spreads to more students. We have continually replaced the
+      weakest parts of the curriculum to arrive at the current form of the
+      course. </p>
+    <p class="c6"> We will be using Pair Programming, described best by Laurie
+      Williams, a computer science professor at North Carolina State University:
+      "Two programmers working side-by-side, collaborating on the same design,
+      algorithm, code or test. One programmer, the driver, has control of the
+      keyboard/mouse and actively implements the program. The other programmer,
+      the observer, continuously observes the work of the driver to identify
+      tactical (syntactic, spelling, etc.) defects and also thinks strategically
+      about the direction of the work. On demand, the two programmers can
+      brainstorm any challenging problem. Because the two programmers
+      periodically switch roles, they work together as equals to develop
+      software." </p>
+    <div class="c8"> </div>
+    <p class="heading"> <a id="news" name="news"> News </a> </p>
+    <table>
+      <tbody>
+<!--
+	    <tr>
+          <td width="100" valign="top" class="c9"> <strong> 20 Jun </strong> </td>
+          <td class="c10"> <strong> HW0 Turn-in </strong>
+            <br />
+            Since HW0 is on paper, please turn it in to your TA in lab or in lecture on Thursday.</td>
+        </tr>
+-->
+        <tr>
+          <td width="100" valign="top" class="c9"> <strong> 2013-03-25 </strong> </td>
+          <td class="c10"> <strong> Welcome to CS10, Summer 2013 Edition</strong>
+            <br />
+            I'm excited to share the Beauty and Joy of Computing with you! On
+            behalf of the course staff, we are all looking forward to a great
+            summer. - Sean Morris </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="heading"> Webcasts </p>
+    <p class="c11"> Webcasts of past lectures are freely available online! </p>
+    <ul>
+      <li> <a href="http://webcast.berkeley.edu/playlist#c,s,Spring_2012,B060A68F57805734">
+          Spring 2012 </a> </li>
+      <li> <a href="http://www.youtube.com/course?list=PL01DB1A89D7FD9F6A">
+          Fall 2011 </a> </li>
+      <li> <a href="http://www.youtube.com/playlist?list=PL2927B6850BE98482">
+          Spring 2011 </a> </li>
+      <li> <a href="http://www.youtube.com/playlist?list=PLECBD29A17AAF6EF9">
+          Fall 2010 </a> </li>
+    </ul>
+    <p class="heading"> <a id="calendar" name="calendar"> Calendar </a> </p>
+    <h1> Weekly Schedule</h1>
+    <table width="100%">
+      <tbody>
+        <tr class="weekCalendarRow">
+          <th width="7%" align="center" class="calendar"> Hour </th>
+          <th width="14%" align="center" colspan="2" class="calendar"> Monday </th>
+          <th width="14%" align="center" colspan="3" class="calendar"> Tuesday </th>
+          <th width="14%" align="center" colspan="2" class="calendar"> Wednesday
+          </th>
+          <th width="14%" align="center" colspan="2" class="calendar"> Thursday </th>
+          <th width="14%" align="center" class="calendar"> Friday </th>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 8:00am </td>
+            <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" colspan="3" class="calendar"> <br />
+          </td>
+        <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 9:00am </td>
+          <td align="center" colspan="2" rowspan="3" class="lab"> Lab 111 <br />
+            (Pierce Vollucci) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?sutardja">200 Sutardja
+              Dai</a> </td>
+
+        <td align="center" colspan="3" class="calendar"> <br />
+          </td>
+          <td align="center" colspan="2" rowspan="3" class="lab"> Lab 111 <br />
+            (Pierce Vollucci) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?sutardja">200 Sutardja
+              Dai</a> </td>
+        <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 10:00am </td>
+          <td align="center" colspan="3" class="calendar"> <br />
+          </td>
+          <td align="center"  colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 11:00am </td>
+
+          <td align="center" colspan="3" class="calendar"> <br /></td>
+          <td align="center" colspan="2" rowspan="1" class="oh"> Office Hours <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">411 Soda
+              </a> <br />
+          </td>
+          
+          <td align="center" class="calendar"> <br />
+          </td>
+
+
+
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 12:00pm </td>
+          <td align="center" colspan="2" class="disc"> Discussion 111 <br />
+            (Pierce Vollucci) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">320 Soda</a> </td>
+
+          <td align="center" colspan="3" class="calendar"> <br />
+          </td>
+
+          <td align="center" colspan="2" class="disc"> Discussion 111 <br />
+            (Pierce Vollucci) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">320 Soda</a>
+	   </td>
+
+          <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 1:00pm </td>
+          <td align="center" colspan="2" rowspan="3" class="lab"> Lab 112 <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?sutardja">200 Sutardja
+              Dai</a></div> <br />
+          </td>
+          <td align="center" colspan="3" rowspan="2" class="oh"> Office Hours <br />
+            (Sean Morris) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">329 Soda
+              </a> <br />
+          </td>
+
+	   <td align="center" colspan="2" rowspan="3" class="lab"> Lab 112 <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?sutardja">200 Sutardja
+              Dai</a></div> <br />
+          </td>
+          <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 2:00pm </td>
+          <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 3:00pm </td>
+          <td align="center" colspan="3" class="calendar"> <br />
+          </td>
+          <td align="center" colspan="2" rowspan="1" class="oh"> Office Hours <br />
+            (Pierce Vollucci) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">411 Soda</a> <br />
+          </td>
+
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 4:00pm </td>
+          <td align="center" colspan="2" class="lecture"> Lecture <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">306 Soda</a> </td>
+          <td align="center" colspan="3" class="lecture"> Lecture <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">306 Soda</a> </td>
+          <td align="center" colspan="2" class="lecture"> Lecture <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">306 Soda</a> </td>
+          <td align="center" colspan="2" class="lecture"> Lecture <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">306 Soda</a> </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+        <tr class="weekCalendarRow">
+          <td align="center" class="calendar"> 5:00pm </td>
+          <td align="center" colspan="2" class="disc"> Discussion 112 <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">320 Soda</a> </td>
+          <td align="center" colspan="3" rowspan="1" class="oh"> Office Hours <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">411 Soda</a> <br />
+          </td>
+
+          <td align="center" colspan="2" class="disc"> Discussion 112 <br />
+            (Peter Sujan) <br />
+            <a href="http://www.berkeley.edu/map/3dmap/3dmap.shtml?soda">320 Soda</a> </td>
+          <td align="center" colspan="2" class="calendar"> <br />
+          </td>
+          <td align="center" class="calendar"> <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h1> Semester Schedule (Subject to change prior to beginning of term)</h1>
+    <br />
+    <br />
+    <table width="100%">
+      <tbody>
+        <tr class="calendar#ALTERNATECSSROW">
+          <th width="4%" align="center" class="calendar"> Week </th>
+          <th width="4%" align="center" class="calendar"> Dates </th>
+          <th width="8%" align="center" class="calendar"> Required Readings</th>
+          <th width="8%" align="center" class="calendar">Recommended Readings</th>
+          <th width="8%" align="center" class="calendar"> Lecture 1 (M) </th>
+          <th width="8%" align="center" class="calendar"> Discussion 1 (M) </th>
+          <th width="8%" align="center" class="calendar"> Lab 1 (M)</th>
+          <th width="8%" align="center" class="calendar"> Lecture 2 (Tu) </th>
+          <th width="8%" align="center" class="calendar"> Lecture 3 (W) </th>
+          <th width="8%" align="center" class="calendar"> Discussion 2 (W) </th>
+          <th width="8%" align="center" class="calendar"> Lab 2 (W)</th>
+          <th width="8%" align="center" class="calendar"> Lecture 4 (Th) </th>
+          <th width="8%" align="center" class="calendar"> HW &amp; Projects Due
+          </th>
+        </tr>
+        <tr class="calendar2">
+          <td width="4%" align="center" class="calendar calendar2"> 1 </td>
+          <td align="center" class="calendar2"> Jun 24 - <br />
+            Jun 30 </td>
+          <td align="left" class="calendar2"> • <a href="http://inst.eecs.berkeley.edu/%7Ecs10/sp11/lec/01/2010-08-30-CS10-L01-BH-Abstraction.txt">
+              Prof. Harvey's Intro to Abstraction </a> <br />
+            • <a href="http://doi.acm.org/10.1145/1378704.1378719"> Designing
+              Games with a Purpose (GWAP) </a> <br />
+            • <a href="http://www.nytimes.com/2011/06/28/us/28scotus.html">
+              Justices Split on Violent Games </a> <br />
+            • <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">
+              Why Software is Eating the World </a> <br />
+		</td>
+          <td class="calendar2">• <a href="http://doi.acm.org/10.1145/1232743.1232745">
+              Is Abstraction the Key to Computing?</a><br />
+            • <a href="http://www.msnbc.msn.com/id/40077373/ns/technology_and_science-games/">
+              Kinect's Future <br />
+              a Game Controller in Everything </a> <br />
+            • <a href="http://inst.eecs.berkeley.edu/%7Ecs10/fa10/readings/videogames/extra/">
+              More readings on video games </a><br />
+          </td>
+          <td align="center" class="calendar2 lecture" id="1"> <a href="lec/01/">Abstraction</a> <br/> - <br/>
+            <a target="_new" href="https://coursesharing.org/courses/6/lectures/7">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 disc" id="1"> Welcome,
+            Introductions, and Expectations</td>
+          <td align="center" class="calendar2 lab" id="1">
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=1">Broadcast,
+<!-- http://sage.cs.berkeley.edu/course/view.php?id=34&topic=1 -->
+              Animations, &amp; Music</a><br />
+            Watch a TA do the lab <a href="http://www.youtube.com/watch?v=Aub6BAxAT-c&amp;list=PLAE5AE3CD22628741&amp;index=1&amp;feature=plpp_video">here</a>.<br />
+
+          </td>
+          <td align="center" class="calendar2 lecture"> <a href="lec/03/">Video
+              Games</a> <br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/11">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 lecture"><a class="lecture" href="lec/04/">Functions
+              </a> <br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/12">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 disc">
+		<a href="http://ucoe.adobeconnect.com/p5ezwwtw8g2/">Anatomy
+              of a Computer &amp; the Power of Binary</a>
+		<a href="disc/Discussion+2-Computer+Architecture+and+Binary+Digit.pdf">(Slides)</a>
+
+		</td>
+          <td align="center" class="calendar2 lab">
+		<a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=2">Loops
+              and Variables </a> <br />
+              Watch a TA do the lab <a href="http://www.youtube.com/watch?v=rn6mlhS6ZdY&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.<br />
+		</td>
+          <td align="center" class="calendar lecture" id="1"> <a href="lec/05/">
+              Programming Paradigms </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/13">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2"><a href="hw/hw0.pdf">Homework 0</a> <br />
+            Wednesday at 11:59pm </td>
+        </tr>
+        <tr class="calendar">
+          <td width="4%" align="center" class="calendar"> 2 </td>
+          <td align="center" class="calendar"> Jul 01 - <br />
+            Jul 07 </td>
+          <td align="left" class="calendar">• <a href="http://youtu.be/JKAzZocdQ1Y">
+              Program or Be Programmed (Video: Author Speech) </a> <br />
+            • <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter1.pdf">
+              BtB Chapter 1 </a> <br />
+            • <a href="http://www.ted.com/talks/kevin_slavin_how_algorithms_shape_our_world.html">
+              How Algorithms Shape Our World </a><br />
+            <a href="http://inst.eecs.berkeley.edu/%7Ecs10/fa10/readings/videogames/extra/"><font
+                color="#800000"></font>
+            </a> </td>
+          <td class="calendar">• <a href="http://doi.acm.org/10.1145/1592761.1592779">
+              Scratch: Programming for All (CACM)</a></td>
+          <td align="center" class="calendar lecture" id="1"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=3">
+            </a> <a href="lec/06/">Algorithms I</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/14">Sp12
+              HD video with Qs</a>
+              </td>
+          <td align="center" class="calendar disc" id="1">
+		Functions Review <a href="https://docs.google.com/presentation/d/1EBlw7ANhfj4qMnU4YFAfe5F6FtWjOqvSV_0Nt0U2AZI/pub?start=false&loop=false&delayms=3000">
+              Notes </a>
+		</td>
+          <td align="center" class="calendar lab" id="1"> <a
+              class="lecture"
+              href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=3">Random,
+              If, &amp; Input</a><br />
+              Watch a TA do the lab <a href="http://www.youtube.com/watch?v=YGen0fAO0Y8&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.<br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=4">BYOB</a>
+              <br />
+              Watch a TA do the lab <a href="http://www.youtube.com/watch?v=Sm_ZGLT72yQ&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.
+		</td>
+          <td align="center" class="calendar lecture"><a href="lec/07/">Algorithms
+              II, Order of Growth</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/15">Sp12
+              HD video with Qs</a>
+		</td>
+        <td align="center" class="calendar2 lecture" id="1"> <a href="lec/09/">Concurrency</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/16">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar disc">
+		<a href="http://ucoe.adobeconnect.com/p1k1mrbt36g/">Lists &amp; Algorithms</a>
+		<a href="disc/discussion4.pdf">Notes</a> <a href="disc/SolutionstoDiscussion4.ypr">Code</a>
+		<br/> - <br/>
+            <a href="disc/Fa12_Quest_Practice_Problem_Solutions.pdf">Quest
+              Practice</a>
+		</td>
+          <td align="center" class="calendar lab"><a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=6"></a><a
+              href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=5">Lists
+              I</a><br />
+              Watch a TA do the lab <a href="http://www.youtube.com/watch?v=8549sTGQwLQ&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.<br/>
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=6">Lists
+              II</a> <br />
+		Watch a TA do the lab <a href="http://www.youtube.com/watch?v=lhuEMtcPgB8&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.
+		</td>
+           <td align="center" class="noClass">Fourth of July<br />
+          </td>
+          <td align="center" class="calendar"><a href="hw/hw1.html">Homework
+
+              1 </a> <br />
+            Friday at 11:59pm<br />
+		-<br/>
+		<a href="exams/quest">Quest</a><br/> Review Session on Sunday July 7th<br/> (12-3PM in 306 Soda)
+          </td>
+        </tr>
+        <tr>
+          <td width="4%" align="center" class="calendar calendar2"> 3 </td>
+          <td align="center" class="calendar2"> Jul 08 - <br />
+            Jul 14 </td>
+          <td align="left" class="calendar2">• <a href="http://computer.howstuffworks.com/moores-law.htm">
+              How Moore's Law Works </a> <br />
+            • <a href="http://www.gotw.ca/publications/concurrency-ddj.htm"> <font
+                color="#008000">
+                <i> Free Lunch is Over * </i> </font> </a> <br />
+		• <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter2.pdf">
+              BtB Chapter 2 </a> <br />
+		</td>
+          <td class="calendar2">• <a class="calendar2" href="http://doi.acm.org/10.1145/1506409.1506425">
+              Spending Moore's dividend (CACM) </a> <br />
+            • <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter3.pdf">
+              BtB Chapter 3</a><br />
+		</td>
+         <td align="center" class="calendar lecture"><b><a href="exams/quest">Quest</a><br/>
+              (in-class exam)</b></td>
+          <td align="center" class="calendar2 disc" id="1">
+		<a href="http://ucoe.adobeconnect.com/p50gq02sada/">Algorithms &amp; Algorithmic Complexity</a>
+            <a href="disc/Week_5_Discussion.pdf">Notes</a>
+		</td>
+
+          <td align="center" class="calendar2 lab" id="2"><a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=7">Algorithms</a><br />
+            Watch a TA do the lab <a href="http://www.youtube.com/watch?v=-Pu-B85uCKU&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.<br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=8">Algorithm
+              Complexity </a><br />
+            Watch a TA do the lab <a href="http://www.youtube.com/watch?v=7WBC-d7NqnI&amp;feature=bf_next&amp;list=PLAE5AE3CD22628741">here</a>.<br />
+          </td>
+          <td align="center" class="calendar2 lecture" id="2"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=5">
+            </a> <a href="lec/08/">Recursion
+              I</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/17">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar lecture" id="2"> 
+            Guest Lecturer Reza Lotun: <a href="lec/12/">
+              'Twitter' </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/28">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar disc" id="1">
+		Concurrency
+		<br/> - <br/>
+		Project Intro
+		<br/> - <br/>
+		HW3 Intro
+		</td>
+          <td align="center" class="calendar lab" id="2">
+		<a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=9">Concurrency</a><br />
+		Watch a TA do the lab <a href="http://youtu.be/Z0VKC_LZWOA?hd=1">here</a>.<br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=10">Recursion
+              I </a> <br />
+		Watch a TA do the lab <a href="http://www.youtube.com/watch?v=8UIyqtDRFjU&amp;list=PLAE5AE3CD22628741&amp;index=10&amp;feature=plpp_video">here</a>.
+          </td>
+          <td align="center" class="calendar2 lecture"> Guest Lecturer Prof
+            Kathy Yelick: <a href="lec/17/">
+              'Saving the World with Computing <br />
+              (CS + X)' </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/29">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2"><a href="hw/hw2.html">Homework
+              2 </a> <br />
+              Thursday 7/11 at 11:59pm <br />
+            <a href="hw/hw3.html">Homework
+
+              3 </a> <br />
+            Tuesday 7/16 at 11:59pm </td>
+        </tr>
+        <tr class="calendar">
+          <td width="4%" align="center" class="calendar"> 4 </td>
+          <td align="center" class="calendar"> Jul 15 - <br />
+            Jul 21 </td>
+          <td align="left" class="calendar">
+            • <a href="readings/BtB4-pt1.pdf">
+              BtB Chapter 4 Reading Segment 1 </a> <br />
+            • <a href="readings/BtB4-pt2.pdf">
+              BtB Chapter 4 Reading Segment 2 </a> <br />
+          </td>
+          <td class="calendar">
+		• <a href="http://cacm.acm.org/magazines/2009/4/22953-computing-as-social-science/fulltext">
+              Computing as Social Science</a><br />
+            • <a href="http://cacm.acm.org/magazines/2011/10/131393-living-in-a-digital-world/pdf">
+              Living in a Digital World</a><br />
+          </td>
+          <td align="center" class="calendar lecture" id="2"><a href="lec/11/">Recursion
+              II</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/19">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar disc" id="2"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=7">
+            </a>Recursion<br />
+            <br />
+          </td>
+
+          <td align="center" class="calendar lab" id="2">
+		<a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=12">Recursion
+              II</a><br />
+		Watch a TA do the lab <a href="http://youtu.be/ZtahpH0QyfE?hd=1">here</a>. <br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=13">Project
+              Work</a>
+          </td>
+           <td align="center" class="lecture">Guest Lecturer Gerald Friedland: <a href="lec/10/">
+              Social Implications I</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/18">Sp12
+              HD video with Qs</a></td>
+          <td align="center" class="calendar lecture"> <a href="hw/hw2.html">
+            </a><a href="lec/13/">Social
+              Implications II </a><br/> - <br/>
+		<a target="_new" href="http://youtu.be/v_tOSw-vhug">Fa11
+              SD video</a>
+		</td>
+          <td align="center" class="calendar disc">Recursion Revisited<br />
+          </td>
+          <td align="center" class="calendar lab">
+		<a href="http://sage.cs.berkeley.edu/mod/resource/view.php?id=9742">Recursion
+              III </a><br />
+		Watch a TA do the lab <a href="http://youtu.be/UPJHQehg46A?hd=1">here</a>. <br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=14">Project
+              Work </a>
+		</td>
+          <td align="center" class="calendar lecture"><a href="lec/14/">
+              Game Theory </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/23">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar"><a href="https://docs.google.com/document/d/1jaRXQ6BBrCIovdhNTV0MA3esAAfixJbmfP9y56yOafY/pub">Midterm Project</a><br/>&#149; Project Proposal <!--<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFBwUXlYWU5YNUZJb0tYVzdqYTlOcXc6MA#gid=0">Submit here</a>--><br/>Due: Wednesday 11:59pm<br /><br />
+            &#149; Progress Report <!--<a href="https://docs.google.com/spreadsheet/viewform?formkey=dDZsVEZsclEteTlNSUFCWGdCekQyeEE6MA#gid=0">Submit here</a>--><br />
+            Due: Sunday 11:59pm<br />
+          </td>
+        </tr>
+        <tr class="calendar2">
+          <td width="4%" align="center" class="calendar calendar2"> 5 </td>
+          <td align="center" class="calendar2"> Jul 22 - <br />
+            Jul 28 </td>
+          <td align="left" class="calendar2">• <a href="readings/BtB5-pt1.pdf">
+              BtB Chapter 5 Reading Segment 1 </a> <br />
+            • <a href="readings/BtB5-pt2.pdf">
+              BtB Chapter 5 Reading Segment 2 </a> <br />
+            • <a href="readings/BtB5-pt3.pdf">
+              BtB Chapter 5 Reading Segment 3 </a> <br />
+            • <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter6.pdf">
+              BtB Chapter 6 (27-37) </a> <br />
+            <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/10/19/BU5K1LJ4R3.DTL"><font
+                color="#800000"></font></a></td>
+          <td class="calendar2">• <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/10/19/BU5K1LJ4R3.DTL">
+              Data Explosion Creates Revolution </a> <br />
+            • <a href="http://www.wired.com/magazine/2010/05/process_pixar/">
+              Animating a Blockbuster </a> <br />
+		</td>
+          <td align="center" class="calendar2 lecture" id="1"> <a href="lec/02/">3D
+              Graphics </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/10">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 disc" id="2">
+		Midterm Prep and Blog Post Introduction<br />
+            <br />
+          </td>
+          <td align="center" class="calendar2 lab" id="2">
+		<a href="http://sage.cs.berkeley.edu/mod/resource/view.php?id=9751">Applications
+              That Changed The World</a><br />
+		Watch a TA do the lab <a href="http://youtu.be/JQ5G-8nW05w">here</a>. <br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=14">Project
+              Work </a>
+		</td>
+          <td align="center" class="calendar2 lecture" id="2"> Guest
+            Lecturer Eric Paulos: <a href="lec/15/">
+              HCI</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/21">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 lecture"><a href="lec/18/">Social Implications III
+              </a><br />-<br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/18">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 disc">Social Implications of Computing<br />
+            <br />
+          </td>
+          <td align="center" class="calendar2 lab">
+		Project Work/Study Time <br />
+            -<br />
+            <b><a href="exams/midterm/midterm_info.html">Online Midterm Exam</a></b> </td>
+          <td align="center" id="2" class="calendar lecture"><a href="lec/19/">Lambda
+              + HOFs I</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/24">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2"><a href="https://docs.google.com/document/d/1jaRXQ6BBrCIovdhNTV0MA3esAAfixJbmfP9y56yOafY/pub">Midterm Project</a> <br />
+            (<a href="https://docs.google.com/document/d/1VOLIvFKrD8MPIg3TJp35i2Efoq1HK4nwOu3hgLVWZ1k/edit?hl=en_US">General Tips</a>) <br />
+              Friday at 11:59pm
+		<br />
+		<br />
+		<a href="exams/midterm/midterm_info.html">Midterm Exam</a><br/>Review Session on Sunday July 28st (12-3PM 306 Soda)
+		</td>
+        </tr>
+        <tr class="calendar">
+          <td width="4%" align="center" class="calendar"> 6 </td>
+          <td align="center" class="calendar"> Jul 29 - <br />
+            Aug 04 </td>
+          <td align="left" class="calendar">• <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter7.pdf">
+              BtB Chapter 7 </a> <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter8.pdf"><font
+                color="#800000"></font></a><br />
+            <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/10/19/BU5K1LJ4R3.DTL"><font
+                color="#800000"></font></a><a
+              href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/10/19/BU5K1LJ4R3.DTL">
+            </a> <a href="http://doi.acm.org/10.1145/1506409.1506425"><font color="#800000"></font>
+            </a> </td>
+          <td class="calendar">• <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter8.pdf">
+              BtB Chapter 8</a> <br/>
+              • <a href="http://www.wired.com/thisdayintech/tag/turing-machine/"> Computer Pioneer Alan Turing </a> <br>
+            • <a href="http://introcs.cs.princeton.edu/java/76computability/halting-poem.html"> <font color="#800000"> Halting Problem Poem </font> </a><br/>
+</td>
+          <td align="center" id="2" class="calendar lecture"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=10">
+            </a> <a href="lec/20/">Lambda
+              + HOFs II </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/26">Sp12
+              HD video with Qs</a> <br />
+		- <br />
+		<b><a href="exams/midterm/midterm_info.html">Paper Midterm Exam</a><br/> (Monday July 29th 7PM at 306 Soda)</b>
+		</td>
+          <td align="center" id="2" class="calendar disc">Artificial
+            Intelligence<br />
+            <br />
+          </td>
+          <td align="center" id="2" class="calendar lab">
+	<a href="http://sage.cs.berkeley.edu/mod/resource/view.php?id=9792">Lambda + HOFs I</a><br/>
+            Watch a TA do the lab <a href="http://youtu.be/sAZeF8QOqsU?hd=1">here</a>.<br />
+	-<br/>
+	Project Work
+             </td>
+          <td align="center" class="calendar lecture">
+            <a href="lec/21/">Distributed
+              Computing</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/25">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 lecture" id="2">
+			<a href="lec/22/">Limits
+	              of Computing </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/30">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar disc">HOFs &amp; Lambdas<br />
+            <br />
+          </td>
+          <td align="center" class="calendar lab">
+	<a
+              href="http://sage.cs.berkeley.edu/mod/resource/view.php?id=9818">Lambda
+              + HOFs II</a> <br />
+		Watch a TA do the lab <a href="http://youtu.be/LiOupAf4ef0?hd=1">here</a>.<br />
+		-<br />
+		Project Work/Guest Lab
+            </td>
+          <td align="center" class="calendar lecture"> Guest Lecturer Luke Segars, Google
+		<a href="lec/20/">Data Divide</a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/27">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar"><a href="blog/blog.html">Blog Entry</a> <br />
+            Friday at 11:59pm<br />
+            <br />
+            <a href="blog/blog.html">Blog Comments </a> <br />
+            Sunday at 11:59pm <br />
+            <br />
+            <a href="https://docs.google.com/document/d/1pUviSTA6f8aY626vfNlelhWmK9LXq0Ji1yDhpU-4fsE/pub">Final Project </a> <br/>Project Proposal <br /><a href="https://docs.google.com/spreadsheet/viewform?formkey=dFVkeG5LWE5ldE4yWFdvdTF2SFc0WFE6MA#gid=0">Submit here</a><br/>
+            Friday at 11:59pm<br />
+
+
+          </td>
+        </tr>
+        <tr class="calendar2">
+          <td width="4%" align="center" class="calendar calendar2"> 7 </td>
+          <td align="center" class="calendar2"> Aug 05 - <br />
+            Aug 11 </td>
+          <td align="left" class="calendar2">• <a href="http://www.nytimes.com/2010/06/20/magazine/20Computer-t.html">
+              What is IBM's Watson? </a> <br />
+            • <a href="http://www.hulu.com/watch/23347/nova-the-great-robot-race">
+              The Great Robot Race (Video) </a> <br />
+            • <a href="http://www.scientificamerican.com/article.cfm?id=computers-solve-checkers-its-a-draw">
+              Computers Solve Checkers -- It's a Draw </a> <br />
+            • <a href="http://inst.eecs.berkeley.edu/%7Ecs10/fa10/lec/21/ai.txt">
+              Brian Harvey's AI notes </a> <br />
+            • <a href="http://www.scientificamerican.com/article.cfm?id=what-makes-a-quantum-comp">
+              Why is Quantum Different? </a> <br />
+            • <a href="http://money.cnn.com/2006/07/26/magazines/fortune/futureoftech_quantum.fortune/index.htm">
+              Quantum Leap </a> <br />
+            • <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/chapter9.pdf">BtB: Conclusion </a><br />
+              </td>
+          <td class="calendar2">• <a href="http://www.nytimes.com/2010/08/09/opinion/09lanier.html">
+              The First Church of Robotics </a> <br />
+            • <a href="http://www.youtube.com/watch?v=4gzpd0irP58"> The
+              Thinking Machine (Video)</a><br />
+            • <a href="http://www.youtube.com/watch?v=hb4AzF6wEoc"> Apple's
+              1987 Knowledge Navigator (Video) </a> <br />
+            • <a href="http://youtu.be/bwj2s_5e12U"> Microsoft's view of
+              productivity in 2019 (Video) </a> <br />
+            • <a href="http://www.bbc.co.uk/news/magazine-16536598"> Twenty Top
+              Predictions for life 100 years from now</a><br>
+            • <a href="http://radar.oreilly.com/2012/08/dna-storage.html"> <font color="#008000"> DNA Storage</font></a> <br>
+            • <a href="http://www.youtube.com/watch?v=tnRJaHZH9lo"> The Future
+              of Augmented Reality </a> <br />
+            • <a href="http://youtu.be/5pg6fho-xb4"> Apple's Siri </a> <br />            
+          </td>
+          <td align="center" class="calendar2 lecture" id="3">	<a href="lec/23/">Future of Computing </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/31">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" id="2" class="calendar2 disc"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=21">
+            </a> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=24"></a>HOFs
+
+            &amp; Lambdas Revisited <br />
+          </td>
+          <td align="center" class="calendar2 lab" id="2">
+			<a href="http://sage.cs.berkeley.edu/mod/resource/view.php?id=9833">Distributed
+              Computing </a><br />
+		Watch a TA do the lab <a href="http://youtu.be/vzINbAxzTCI?hd=1">here</a>. <br />
+            -<br />
+            <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=23">Project
+              Work </a> </td>
+          <td align="center" class="calendar2 lecture" id="2"> <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=9">
+            </a> Guest Lecturer David Hall: <a href="lec/16/">
+              Artificial Intelligence </a><br/> - <br/>
+		<a target="_new" href="https://coursesharing.org/courses/6/lectures/22">Sp12
+              HD video with Qs</a>
+		</td>
+          <td align="center" class="calendar2 lecture">Summary and Farewell
+          </td>
+          <td align="center" class="calendar2 disc"> Open Topic/Final Thoughts<br />
+          </td>
+          <td align="center" class="calendar2 lab">
+	    <a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=16">Simulations (Shark &amp; Fish)</a> <br />
+            Watch a TA do the lab <a href="http://youtu.be/NrgnlDoO6dE?hd=1">here</a>. <br />
+            -<br />
+		<a href="http://sage.cs.berkeley.edu/course/view.php?id=34&amp;topic=24">Project
+              Work and Peer Review</a><br />
+		</td>
+          <td align="center" class="calendar noClass" id="3">Cancelled<br />
+          </td>
+          <td align="center" class="calendar2"><a href="https://docs.google.com/document/d/1pUviSTA6f8aY626vfNlelhWmK9LXq0Ji1yDhpU-4fsE/pub">Final Project </a><br/> Progress Report <br /><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGd3VUxENFo0XzF2N0o1YWJQRkVTVUE6MA#gid=0">Submit here</a><br />
+            Tuesday at 11:59pm<br />
+            <br />
+            <a href="https://docs.google.com/document/d/1pUviSTA6f8aY626vfNlelhWmK9LXq0Ji1yDhpU-4fsE/pub">Final Project </a> <br />
+            (<a href="https://docs.google.com/document/d/1VOLIvFKrD8MPIg3TJp35i2Efoq1HK4nwOu3hgLVWZ1k/edit?hl=en_US">General Tips</a>) <br />
+            Friday at 11:59pm
+		<br />
+		<br />
+		<a href="exams/final/final_info.html">Final Exam</a><br/>
+		Review Session on Sunday August 11th<br/> (12-3PM in 306 Soda)
+		</td>
+        </tr>
+        <tr>
+          <td width="4%" align="center" class="calendar"> 8 </td>
+          <td align="center" class="calendar"> Aug 12 - <br />
+            Aug 18 </td>
+          <td align="left" class="calendar">No Reading (RRR and Final)<br /> </td>
+          <td class="calendar"><br />
+          </td>
+          <td align="center" class="calendar noClass" id="3">RRR<br />
+          </td>
+          <td align="center" class="calendar noClass" id="3">RRR<br />
+          </td>
+          <td align="center" class="calendar lab" id="3"><strong class="calendar">Online
+              <a href="exams/final/final_info.html">Final Exam</a></strong>
+            	</td>
+          <td align="center" id="3" class="calendar noClass">RRR<br />
+          </td>
+          <td align="center" class="calendar "> <b>Paper <a href="exams/final/final_info.html">Final Exam</a> (Wed Aug 14 7-10PM in 306 Soda)</b></td>
+          <td align="center" class="calendar"><br />
+          </td>
+          <td align="center" class="calendar"><br />
+          </td>
+          <td align="center" class="calendar"><br />
+          </td>
+          <td align="center" class="calendar"><br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <font color="#008000"><strong><i>* These readings are required, but are
+          challenging - you should understand the "big idea" concepts, if not
+          all the technical details. </i> </strong> </font> <br />
+    <p class="heading"><a id="staff" name="staff">Staff </a> </p>
+    <h1> Lecturer </h1>
+    <div style="width: 100%; float: center; text-align: center;">
+      <!--photo--> <img width="200" align="middle" height="300" class="staff" title=""
+        alt=""
+        src="images/SeanMorris.jpg" />
+      <br />
+      <!--ID--> <b>Sean Morris</b> (<a href="bios/MorrisBio.txt">bio</a>) <br />
+      <!-- <a href="mailto:smorris@berkeley.edu"><tt>smorris@berkeley.edu</tt></a><br /> -->
+	<b> OH: 329 Soda<br />
+		Tuesdays from 1:00-3:00<br /> </b>
+      <a href="mailto:sean.smorris@gmail.com"><tt>sean.smorris@gmail.com</tt></a><br />
+    </div>
+    <div style="clear: both;">   </div>
+
+    <h1> Teaching Assistants </h1>
+    <!-- Pierce -->
+    <div style="width: 50%; float: left; text-align: center;"> <img width="200"
+        height="300"
+        class="staff"
+        title=""
+        alt=""
+        src="images/PierceVollucci.jpg" />
+      <br />
+      <b> Pierce Vollucci </b> (<a href="bios/PierceBio.txt">bio</a>) <br />
+      <a href="mailto:pavtheway007@berkeley.edu"><tt>pavtheway007@berkeley.edu</tt></a><br />
+	<b> OH: TBA<br /> </b>
+    </div>
+    <div style="width: 50%; float: left; text-align: center;"> <img width="200"
+        height="300"
+        class="staff"
+        title=""
+        alt=""
+        src="images/PeterSujan.jpg" />
+      <br />
+      <b> Peter Sujan </b> (<a href="bios/PeterBio.txt">bio</a>) <br />
+      <a href="mailto:peterasujan@gmail.com"><tt>peterasujan@gmail.com</tt></a><br />
+	<b> OH: TBA<br /> </b>
+    </div>
+<!--
+    <div style="width: 50%; float: left; text-align: center;"> <img width="187"
+        height="280"
+        class="staff"
+        title=""
+        alt=""
+        src="images/MaxDoughertyMed.jpg" />
+      <br />
+      <b> Max Dougherty </b> (bio) <br />
+      <a href="mailto:mdougherty@berkeley.edu"><tt>mdougherty@berkeley.edu</tt></a><br />
+    </div>
+-->
+    <div style="clear: both;">   </div>
+
+    <h1> Reader </h1>
+    <div style="width: 100%; float: left; text-align: center;"> <img
+          width="187" height="280" src="images/LaurenMock.jpg" alt="" h=""
+          title="" class="staff" /></a> <br />
+      <b> (TAiT) Lauren Mock </b> ( <a href="bios/LaurenBio.txt">bio</a> )
+      <br />
+      <a href="mailto:lmock@berkeley.edu"> <tt>
+          lmock@berkeley.edu </tt> </a> </div>
+
+    <h1> Lab Assistants </h1>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/AkhilaRaju.jpg">
+	<img width="187" height="280" src="images/Su13/AkhilaRaju.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Akhila Raju </b>
+	( <a href="bios/AkhilaRaju.txt">bio</a> ) <br />
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/AndrewNg.jpg">
+	<img width="187" height="280" src="images/Su13/AndrewNg.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Andrew Ng </b>
+	( <a href="bios/AndrewNg.txt">bio</a> ) <br />
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/JannaGolden.jpg">
+	<img width="187" height="280" src="images/Su13/JannaGolden.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Janna Golden </b>
+	( <a href="bios/JannaGolden.txt">bio</a> )
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Sp13/JeffreySnowiss.jpg"><img width="187" height="280" src="images/Sp13/JeffreySnowiss.jpg" alt="" h="" title="" class="staff" /></a> <br /> <b> Jeffrey Snowiss </b> ( <a href="bios/JeffreySnowissBio.txt">bio</a> ) <br />
+    </div>
+
+    <div style="clear: both;">   </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Sp13/JoannaAbot.jpg"><img width="187" height="280" src="images/Sp13/JoannaAbot.jpg" alt="" h="" title="" class="staff" /></a> <br /> <b> Joanna Abot </b> ( <a href="bios/JoannaAbotBio.txt">bio</a> ) <br />
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/ManishaSharma.jpg">
+	<img width="187" height="280" src="images/Su13/ManishaSharma.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Manisha Sharma </b>
+	( <a href="bios/ManishaBio.txt">bio</a> ) <br />
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/RachelHuang.jpg">
+	<img width="187" height="280" src="images/Su13/RachelHuang.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Rachel Huang </b>
+	( <a href="bios/RachelHuang.txt">bio</a> )
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/StellaWalla.jpg">
+	<img width="187" height="280" src="images/Su13/StellaWalla.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Stella Walla </b>
+	( <a href="bios/StellaWalla.txt">bio</a> )
+    </div>
+
+    <div style="clear: both;">   </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/VictoriaShi.jpg">
+	<img width="187" height="280" src="images/Su13/VictoriaShi.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Victoria Shi </b>
+	( <a href="bios/VictoriaShi.txt">bio</a> ) <br />
+    </div>
+
+    <div style="width: 25%; float: left; text-align: center;">
+      <a href="images/Su13/YonSooPark.jpg">
+	<img width="187" height="280" src="images/Su13/YonSooPark.jpg" alt="" h="" title="" class="staff" /></a><br />
+	<b> Yon Soo Park </b>
+	( <a href="bios/YonSooPark.txt">bio</a> ) <br />
+    </div>
+
+    <div style="clear: both;">   </div>
+
+    <!--grades -->
+    <p class="heading"> <a id="grades" name="grades"> Grading </a> </p>
+    <p> For the most part, we would prefer to teach this course <em> without </em>
+      grades. What a wonderful concept, learning for learning sake! However,
+      even though we can't change the "system" overnight, we can create grading
+      policies that support learning as much as possible. The various course
+      activities will contribute to your grade as follows: </p>
+    <table class="grades">
+      <tbody>
+        <tr>
+          <th> Activity </th>
+          <th> Course Points </th>
+          <th> Percentage of Total Grade </th>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Weekly Quizzes and Homework </td>
+          <td align="center" class="calendar"> 60 </td>
+          <td align="center" class="calendar"> 15% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Blog </td>
+          <td align="center" class="calendar"> 60 </td>
+          <td align="center" class="calendar"> 15% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Midterm Project </td>
+          <td align="center" class="calendar"> 60 </td>
+          <td align="center" class="calendar"> 15% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Final Project </td>
+          <td align="center" class="calendar"> 60 </td>
+          <td align="center" class="calendar"> 15% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Quest </td>
+          <td align="center" class="calendar"> 20 </td>
+          <td align="center" class="calendar"> 5% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Midterm </td>
+          <td align="center" class="calendar"> 60 </td>
+          <td align="center" class="calendar"> 15% </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> Final Exam </td>
+          <td align="center" class="calendar"> 80 </td>
+          <td align="center" class="calendar"> 20% </td>
+        </tr>
+      </tbody>
+    </table>
+    <h1> How We'll Calculate Your Grade </h1>
+    <p> Your letter grade will be determined by total course points, as shown in
+      the table below. There is no curve; your grade will depend only on how
+      well you do, not on how well everyone else does. Incomplete grades will be
+      granted only for dire medical or personal emergencies that cause you to
+      miss the final exam, and only if your work up to that point is
+      satisfactory. </p>
+    <table class="grades">
+      <!--the &nbsp; here are to properly align the grades-->
+      <tbody>
+        <tr>
+          <th> Points </th>
+          <th> Grade </th>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 390-400 </td>
+          <td align="center" class="calendar"> A+ </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 370-389 </td>
+          <td align="center" class="calendar"> A   </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 360-369 </td>
+          <td align="center" class="calendar"> A- </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 350-359 </td>
+          <td align="center" class="calendar"> B+ </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 330-349 </td>
+          <td align="center" class="calendar"> B   </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 320-329 </td>
+          <td align="center" class="calendar"> B- </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 310-319 </td>
+          <td align="center" class="calendar"> C+ </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 290-309 </td>
+          <td align="center" class="calendar"> C   </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 280-289 </td>
+          <td align="center" class="calendar"> C- </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> 240-279 </td>
+          <td align="center" class="calendar"> D   </td>
+        </tr>
+        <tr>
+          <td align="center" class="calendar"> &lt; 240 </td>
+          <td align="center" class="calendar"> F   </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--old location of calendar-->
+    <p> <br />
+    </p>
+      <p class="heading">  Resources </p>
+    </a>
+    <p>     <b> λ </b>   <a href="bios/family.html"> CS10 Family </a> <br />
+          <b> λ </b>   <a href="http://codepath.co/"> Codepath</a> <br />
+          <b> λ </b>   <a href="http://byob.berkeley.edu/"> BYOB : Build Your
+        Own Blocks </a> <br />
+          <b> λ </b>   <a href="http://scratch.mit.edu/forums/"> Scratch
+        Forums </a> <br />
+          <b> λ </b>   <a href="http://www.bitsbook.com/"> Blown to Bits </a>
+      <br />
+          <b> λ </b>   <a href="http://www.debuggingrules.com/"> Debugging
+        Rules! </a> <br />
+      <!--These odd entities are non-breaking-space, non-breaking-space, lambda, non-breaking-space. Lists with type "none" create a black circle as their bullet. -->
+          <b> λ </b>   <a href="http://www.berkeley.edu"> UC Berkeley </a> <br />
+          <b> λ </b>   <a href="http://coe.berkeley.edu/"> College of
+        Engineering </a> <br />
+          <b> λ </b>   <a href="http://www.eecs.berkeley.edu/"> Department of
+        Electrical Engineering &amp; Computer Sciences </a> <br />
+          <b> λ </b>   <a href="http://webcast.berkeley.edu/course_details_new.php?seriesid=2010-D-26250&amp;semesterid=2010-D">
+        Webcast archive of 2010Fa lectures </a> <br />
+          <b> λ </b>   <a href="lab/solutions.html"> Solutions to Lab
+        Exercises </a> </p>
+    <br />
+    <hr />
+
+	<tt> Contact <a href="mailto:web.cs10@gmail.com">Webmaster</a>
+      <!--
+<script language="JavaScript">var datedate=document.lastModifieddocument.write("Last modified on "+date)</script>-->
+      <!--#config timefmt="%Y-%m-%d@%H:%M:%S %Z"-->
+      <!--#flastmod file="index.shtml"--> </tt> <br />
+    <p> <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">
+        <img align="right" src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
+          class="c14"
+          alt="Creative Commons License" />
+      </a> </p>
+    <p class="c15"> This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+        rel="license">
+        Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
+        License </a> </p>
+  </body>
+</html>
